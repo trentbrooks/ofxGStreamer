@@ -47,6 +47,30 @@ You need to download GStreamer v1.0. To install it under windows use the 1.2.2 p
 
 * [gstreamer-1.0-devel-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-devel-x86-1.2.2.msi) installs the development files needed to compile gst applications.
 
+###For Windows VS2015 / Windows 10
+Depending on the configuration you want to compile your application with (32/64bit), download the corresponding installers:
+* 32bit
+	* download and install [gstreamer-1.0-x86-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-x86-1.7.1.msi)
+	* download and install [gstreamer-1.0-devel-x86-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-devel-x86-1.7.1.msi)
+	* add "C:\gstreamer\1.0\x86\bin" to PATH environment variable
+	* add Additional Library Direcory "D:\gstreamer\1.0\x86\lib" to the project in VS
+
+* 64bit
+	* [gstreamer-1.0-x86_64-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-x86_64-1.7.1.msi)
+	* [gstreamer-1.0-devel-x86_64-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-devel-x86_64-1.7.1.msi)
+	* add "C:\gstreamer\1.0\x86_64\bin" to PATH environment variable
+	* add Additional Library Direcory "D:\gstreamer\1.0\x86_64\lib" to the project in VS
+	
+For both configurations, add these libraries to Linker->Additional Dependencies:
+gstbase-1.0.lib
+gstapp-1.0.lib
+gstreamer-1.0.lib
+gobject-2.0.lib
+iconv.lib
+glib-2.0.lib
+gstvideo-1.0.lib
+
+
 After installing those 2 packages, you need to add the path to the bin directory of the installation to the PATH environment variable. In windows 8 open the control panel and search for environment variable. In windows 7 type "environment variable" into the run window. Edit the system PATH variable and at the end by adding a ; and the bin folder in the path where you installed gstreamer. The default path should be:
 
 `;C:\gstreamer\1.0\x86\bin`
