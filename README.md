@@ -39,16 +39,10 @@ Note: on the systems we have tested it seems it's necesary to remove or rename `
 sudo mv /Library/Frameworks/GStreamer.framework/Headers/assert.h /Library/Frameworks/GStreamer.framework/Headers/assertCOPY.h
 ````
 
-###For Windows (Tested in visual studio 2012, on Windows 7 & 8)
-
-You need to download GStreamer v1.0. To install it under windows use the 1.2.2 packages located [http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/) any later version from [http://gstreamer.freedesktop.org/data/pkg/windows](http://gstreamer.freedesktop.org/data/pkg/windows) should work but haven't been tested yet. It is **important** to install the complete version when the installer asks, or it won't install some plugins like h264 encoder and decoder, audio input... in general everything in gstreamer bad and ugly won't be installed with the tipical installation mode.
-    
-* [gstreamer-1.0-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-x86-1.2.2.msi) installs the necesary libraries for applications to run.
-
-* [gstreamer-1.0-devel-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-devel-x86-1.2.2.msi) installs the development files needed to compile gst applications.
-
 ###For Windows VS2015 / Windows 10
-Depending on the configuration you want to compile your application with (32/64bit), download the corresponding installers:
+Depending on the configuration you want to compile your application with (32/64bit), download the corresponding installers.
+It is **important** to install the complete version when the installer asks, or it won't install some plugins like h264 encoder and decoder, audio input... in general everything in gstreamer bad and ugly won't be installed with the tipical installation mode.
+
 * 32bit
 	* download and install [gstreamer-1.0-x86-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-x86-1.7.1.msi)
 	* download and install [gstreamer-1.0-devel-x86-1.7.1](http://gstreamer.freedesktop.org/data/pkg/windows/1.7.1/gstreamer-1.0-devel-x86-1.7.1.msi)
@@ -69,7 +63,6 @@ gobject-2.0.lib
 iconv.lib
 glib-2.0.lib
 gstvideo-1.0.lib
-
 
 After installing those 2 packages, you need to add the path to the bin directory of the installation to the PATH environment variable. In windows 8 open the control panel and search for environment variable. In windows 7 type "environment variable" into the run window. Edit the system PATH variable and at the end by adding a ; and the bin folder in the path where you installed gstreamer. The default path should be:
 
