@@ -70,3 +70,24 @@ After installing those 2 packages, you need to add the path to the bin directory
 
 That will allow you to run the gstreamer tools like gst-launch from the command line in any folder and will let the applications know where to find the runtime dll's.
 
+
+### Instructions edit: 1/12/16
+
+Additional bits I had to do:
+C++ > Additional Include Directories
+- C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0\include
+
+Linker > Additional Library Directories
+- C:\gstreamer\1.0\x86_64\lib
+
+Linker > Input > Additional Dependencies
+- ;gstbase-1.0.lib;gstapp-1.0.lib;gstreamer-1.0.lib;gobject-2.0.lib;iconv.lib;glib-2.0.lib;gstvideo-1.0.lib
+
+Environment variable (control panel > search for environment variable)
+- edit the system environment variables
+- change the value of GSTREAMER_1_0_ROOT_X86 to the same as GSTREAMER_1_0_ROOT_X86_64. eg. 'C:\gstreamer\1.0\x86_64\'
+- alternatively if dont want to change the env var as above, you have to edit ofGstUtils.cpp line 124: string gst_path = g_getenv("GSTREAMER_1_0_ROOT_X86_64");
+
+Use PG to create project with ofxGstreamer. To use Apple ProRes 4444 alpha encoded videos:
+- player.setPixelFormat(OF_PIXELS_RGBA); // before loadMovie 
+
