@@ -87,6 +87,7 @@ Environment variable (control panel > search for environment variable)
 - edit the system environment variables
 - change the value of GSTREAMER_1_0_ROOT_X86 to the same as GSTREAMER_1_0_ROOT_X86_64. eg. 'C:\gstreamer\1.0\x86_64\'
 - alternatively if dont want to change the env var as above, you have to edit ofGstUtils.cpp line 124: string gst_path = g_getenv("GSTREAMER_1_0_ROOT_X86_64");
+- append ';C:\gstreamer\1.0\x86_64\bin' to the system PATH variable
 
 Use PG to create project with ofxGstreamer. To use Apple ProRes 4444 alpha encoded videos:
 - player.setPixelFormat(OF_PIXELS_RGBA); // before loadMovie 
